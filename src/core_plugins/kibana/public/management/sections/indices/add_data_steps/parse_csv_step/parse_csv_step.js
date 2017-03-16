@@ -96,7 +96,7 @@ modules.get('apps/management')
                   }
 
                   this.columns = results.meta.fields.slice(0, maxSampleColumns);
-                  this.parseOptions = _.defaults({}, this.parseOptions, {delimiter: results.meta.delimiter});
+                  this.parseOptions = _.defaults({ }, this.parseOptions, { delimiter: results.meta.delimiter });
                 }
 
                 this.formattedErrors = this.formattedErrors.concat(_.map(results.errors, (error) => {
