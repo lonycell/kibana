@@ -1,5 +1,4 @@
 import * as Papa from 'papaparse';
-import Baby from 'babyparse';
 
 import _ from 'lodash';
 

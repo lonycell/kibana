@@ -19,9 +19,13 @@ module.exports = function (kibana) {
     id: 'kibana',
 
     config: function (Joi) {
+
+      const ONE_GIGABYTE = 1024 * 1024 * 1024;
+
       return Joi.object({
         enabled: Joi.boolean().default(true),
         defaultAppId: Joi.string().default('discover'),
+        addDataMaxBytes: Joi.number().default(ONE_GIGABYTE),
         index: Joi.string().default('.kibana')
       }).default();
     },
@@ -56,6 +60,7 @@ module.exports = function (kibana) {
 
           return {
             kbnDefaultAppId: serverConfig.get('kibana.defaultAppId'),
+            addDataMaxBytes: serverConfig.get('kibana.addDataMaxBytes'),
             tilemapsConfig: {
               deprecated: {
                 isOverridden: isOverridden,
