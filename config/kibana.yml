@@ -31,6 +31,7 @@
 
 # The default application to load.
 #kibana.defaultAppId: "discover"
+kibana.addDataMaxBytes: 1073741824
 
 # If your Elasticsearch is protected with basic authentication, these settings provide
 # the username and password that the Kibana server uses to perform maintenance on the Kibana
